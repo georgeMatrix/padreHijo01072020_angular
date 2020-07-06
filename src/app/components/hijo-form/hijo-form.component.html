@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <label for="">Nombre</label>
+        <input type="text" [(ngModel)]="hijo.nombreHijo" name="nombreHijo" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="">Apellido</label>
+        <input type="text" [(ngModel)]="hijo.apellidoHijo" name="apellidoHijo" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="">Edad</label>
+        <input type="text" [(ngModel)]="hijo.edadHijo" name="edadHijo" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="">Selecciona un padre</label>
+        <select name="idPadre" [(ngModel)]="hijo.idPadre" class="form-control">
+          <option [ngValue]="padre.id" *ngFor="let padre of padres">{{padre.nombrePadre}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-info" (click)="guardarPadre()" *ngIf="!hijo.id else actualizar">Guadar</button>
+      </div>
+      <ng-template #actualizar>
+        <div class="form-group">
+          <button class="btn btn-info" (click)="actualizarHijo()">Actualizar</button>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>

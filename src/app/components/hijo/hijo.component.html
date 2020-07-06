@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table">
+        <tr *ngFor="let hijo of hijos">
+          <td>{{hijo.nombreHijo}}</td>
+          <td>{{hijo.apellidoHijo}}</td>
+          <td>{{hijo.edadHijo}}</td>
+          <td>{{hijo.padres.nombrePadre}}</td>
+          <td><button class="btn btn-info" [routerLink]="['/nuevoHijo', hijo.id]">Editar</button></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

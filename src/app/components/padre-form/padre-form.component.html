@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <form>
+        <div class="form-group">
+          <label for="">Nombre Padre</label>
+          <input type="text" class="form-control" [(ngModel)]="padre.nombrePadre" name="nombrePadre">
+        </div>
+        <div class="form-group">
+          <label for="">Apellido Padre</label>
+          <input type="text" class="form-control" [(ngModel)]="padre.apellidoPadre" name="apellidoPadre">
+        </div>
+        <div class="form-group">
+          <label for="">Edad Padre</label>
+          <input type="text" class="form-control" [(ngModel)]="padre.edadPadre" name="edadPadre">
+        </div>
+        <div class="form-group">
+          <button class="btn btn-info" (click)="savePadre()" *ngIf="!padre.id else updatePadre">Guardar Datos</button>
+        </div>
+        <ng-template #updatePadre>
+          <button class="btn btn-info" (click)="actualizaPadre()">Actualizar Datos</button>
+        </ng-template>
+      </form>
+    </div>
+  </div>
+</div>

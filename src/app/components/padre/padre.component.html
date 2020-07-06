@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table">
+        <tr *ngFor="let padre of padres">
+          <td>{{padre.nombrePadre}}</td>
+          <td>{{padre.apellidoPadre}}</td>
+          <td>{{padre.edadPadre}}</td>
+          <td><button class="btn btn-info" [routerLink]="['/nuevoPadre', padre.id]">Editar</button></td>
+          <td><button class="btn btn-danger" (click)="eliminarPadre(padre)">Eliminar</button></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
